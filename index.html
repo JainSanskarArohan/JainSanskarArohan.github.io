@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAIN SANSKAR AROHAN</title>
-    <meta name="google-site-verification" content="BYRH8pAEWKly8xLtnggXN3j5gKv3preaeofeprm9cs8" />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Define a custom green palette for Tailwind (optional, but helpful for consistency) */
+        /* Using a deep forest green and a lighter sage/mint green */
+        :root {
+            --color-jain-primary: #1e4537; /* Deep Forest Green */
+            --color-jain-secondary: #d1fae5; /* Light Mint Green */
+            --color-jain-highlight: #34d399; /* Medium Green for buttons */
+        }
+
+        /* Custom Tailwind Configuration - only for demonstration, actual use requires configuring a tailwind.config.js or using utility classes */
+        .text-jain-primary { color: var(--color-jain-primary); }
+        .bg-jain-primary { background-color: var(--color-jain-primary); }
+        .bg-jain-secondary { background-color: var(--color-jain-secondary); }
+        .hover\:bg-jain-highlight:hover { background-color: var(--color-jain-highlight); }
+        .border-jain-primary { border-color: var(--color-jain-primary); }
+
         /* Custom styles for smooth scrolling and clean look */
         html {
             scroll-behavior: smooth;
@@ -29,8 +43,31 @@
             max-height: 1500px; /* Large enough to hold all class portions */
         }
         .section-heading {
-            border-bottom: 2px solid #BFDBFE; /* Light blue underline */
+            border-bottom: 2px solid var(--color-jain-secondary); /* Light green underline */
             padding-bottom: 0.5rem;
+        }
+
+        /* Styles for the Background Image on the Home Section */
+        #home {
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReQxYo-y15U-r-M2Bd4zHNpQbFvN6qxCZK2g&s); /* REPLACE THIS URL */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        /* Overlay for better text readability */
+        #home::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85); /* 85% White Overlay */
+            z-index: 0;
+        }
+        #home > div {
+            position: relative; /* Bring content above the overlay */
+            z-index: 1;
         }
     </style>
 </head>
@@ -38,15 +75,18 @@
 
     <nav class="fixed-nav bg-white w-full z-10 p-4">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-blue-600">JAIN SANSKAR AROHAN</a>
+            
+            <a href="#home" class="flex items-center space-x-3">
+                <img src=https://m.media-amazon.com/images/I/612vvIs882L.jpg alt="JSA Logo" class="h-8 w-8 object-contain"> <span class="text-2xl font-bold text-jain-primary">JAIN SANSKAR AROHAN</span>
+            </a>
             
             <div class="space-x-6 hidden md:flex">
-                <a href="#home" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Home</a>
-                <a href="#about-us" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">About Us</a>
-                <a href="#why-jsa" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Why JSA</a>
-                <a href="#curriculum-reg" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Curriculum</a>
-                <a href="#results" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Result</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium transition duration-300">Contact</a>
+                <a href="#home" class="text-gray-600 hover:text-jain-primary font-medium transition duration-300">Home</a>
+                <a href="#about-us" class="text-gray-600 hover:text-jain-primary font-medium transition duration-300">About Us</a>
+                <a href="#why-jsa" class="text-gray-600 hover:text-jain-primary font-medium transition duration-300">Why JSA</a>
+                <a href="#curriculum-reg" class="text-gray-600 hover:text-jain-primary font-medium transition duration-300">Curriculum</a>
+                <a href="#results" class="text-gray-600 hover:text-jain-primary font-medium transition duration-300">Result</a>
+                <a href="#contact" class="text-gray-600 hover:text-jain-primary font-medium transition duration-300">Contact</a>
             </div>
             
             </div>
@@ -54,11 +94,11 @@
 
     <main class="pt-16">
 
-        <section id="home" class="min-h-screen flex items-center justify-center text-center bg-green-50 py-20 px-4">
+        <section id="home" class="min-h-screen flex items-center justify-center text-center py-20 px-4">
             <div class="max-w-4xl">
-                <h1 class="text-5xl font-extrabold text-blue-800 mb-4">JAIN SANSKAR AROHAN</h1>
-                <p class="text-2xl text-gray-600 mb-8 font-medium">Learning of Jain principles made simpler</p>
-                <a href="https://forms.gle/gZQ21DsV6QemBX3m7" target="_blank" class="bg-blue-600 text-white py-3 px-10 rounded-full text-xl font-semibold hover:bg-blue-700 transition duration-300 tracking-wider">
+                <h1 class="text-5xl font-extrabold text-jain-primary mb-4">JAIN SANSKAR AROHAN</h1>
+                <p class="text-2xl text-gray-700 mb-8 font-medium">Learning of Jain principles made simpler</p>
+                <a href="https://forms.gle/gZQ21DsV6QemBX3m7" target="_blank" class="bg-jain-primary text-white py-3 px-10 rounded-full text-xl font-semibold hover:bg-jain-highlight transition duration-300 tracking-wider">
                     Register Now
                 </a>
             </div>
@@ -66,30 +106,30 @@
 
         <section id="about-us" class="py-20 px-4 bg-white">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 section-heading">About Us</h2>
+                <h2 class="text-4xl font-bold text-center text-jain-primary mb-12 section-heading">About Us</h2>
                 <div class="grid md:grid-cols-3 gap-10 items-center">
                     <div class="md:col-span-2">
                         <p class="text-lg text-gray-700 leading-relaxed">
                             Jain Sanskar Arohan (JSA) is a Spiritual Educational Program launched in 2017 to help seekers of all ages understand Jain concepts/philosophies, values and way of life. This structured course offers a unique opportunity to learn and grow spiritually.
                         </p>
                     </div>
-                    <div class="md:col-span-1 bg-blue-50 p-6 rounded-lg shadow-inner text-center">
+                    <div class="md:col-span-1 bg-jain-secondary p-6 rounded-lg shadow-inner text-center">
                         <div class="grid grid-cols-2 gap-4">
-                            <div><p class="text-3xl font-bold text-blue-600">50+</p><p class="text-sm text-gray-600">Cities</p></div>
-                            <div><p class="text-3xl font-bold text-blue-600">60+</p><p class="text-sm text-gray-600">Centres</p></div>
-                            <div><p class="text-3xl font-bold text-blue-600">1300+</p><p class="text-sm text-gray-600">Students</p></div>
-                            <div><p class="text-3xl font-bold text-blue-600">30+</p><p class="text-sm text-gray-600">Scholars</p></div>
+                            <div><p class="text-3xl font-bold text-jain-primary">50+</p><p class="text-sm text-gray-600">Cities</p></div>
+                            <div><p class="text-3xl font-bold text-jain-primary">60+</p><p class="text-sm text-gray-600">Centres</p></div>
+                            <div><p class="text-3xl font-bold text-jain-primary">1300+</p><p class="text-sm text-gray-600">Students</p></div>
+                            <div><p class="text-3xl font-bold text-jain-primary">30+</p><p class="text-sm text-gray-600">Scholars</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="why-jsa" class="py-20 px-4 bg-green-50">
+        <section id="why-jsa" class="py-20 px-4 bg-jain-secondary">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 section-heading">Why JSA (Jain Sanskar Arohan)?</h2>
+                <h2 class="text-4xl font-bold text-center text-jain-primary mb-12 section-heading">Why JSA (Jain Sanskar Arohan)?</h2>
                 
-                <h3 class="text-3xl font-semibold text-center text-blue-600 mb-8">Deepen your Spiritual Understanding – A true need of the hour.</h3>
+                <h3 class="text-3xl font-semibold text-center text-jain-primary mb-8">Deepen your Spiritual Understanding – A true need of the hour.</h3>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center mb-10">
                     <div class="bg-white p-6 rounded-lg shadow-lg">
@@ -118,12 +158,12 @@
 
         <section id="curriculum-reg" class="py-20 px-4 bg-white">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 section-heading">Course Portions and Registration</h2>
+                <h2 class="text-4xl font-bold text-center text-jain-primary mb-12 section-heading">Course Portions and Registration</h2>
 
                 <div class="space-y-4 max-w-4xl mx-auto">
 
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 1: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -148,7 +188,7 @@
                                 <li>अमर कुमार की श्रद्धा</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/gZQ21DsV6QemBX3m7" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/gZQ21DsV6QemBX3m7" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 1
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -158,8 +198,8 @@
                         </div>
                     </div>
                     
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 2: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -187,7 +227,7 @@
                                 <li>पूज्य श्री जयमल जी म.सा. जीवन झांकी</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/HCNd2Cx7ewJXxWow5" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/HCNd2Cx7ewJXxWow5" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 2
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -197,8 +237,8 @@
                         </div>
                     </div>
 
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 3: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -222,7 +262,7 @@
                                 <li>आचार्य श्री आत्माराम जी महाराज</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/XdAWyWKzUh6f4w4fA" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/XdAWyWKzUh6f4w4fA" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 3
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -232,8 +272,8 @@
                         </div>
                     </div>
 
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 4: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -259,7 +299,7 @@
                                 <li>आचार्य सम्राट श्री आनंदऋषि जी महाराज</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/p22NZpefa9JvMEWZA" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/p22NZpefa9JvMEWZA" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 4
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -269,8 +309,8 @@
                         </div>
                     </div>
                     
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 5: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -296,7 +336,7 @@
                                 <li>युवाचार्य श्री मिश्रीमलजी महाराज "मधुकर"</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/tZFh538TeNfjcb28A" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/tZFh538TeNfjcb28A" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 5
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -306,8 +346,8 @@
                         </div>
                     </div>
 
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 6: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -326,7 +366,7 @@
                                 <li>कामदेव श्रावक</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/tZFh538TeNfjcb28A" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/tZFh538TeNfjcb28A" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 6
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -336,8 +376,8 @@
                         </div>
                     </div>
 
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 7: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -357,7 +397,7 @@
                                 <li>सेवामूर्ति मुनि नंदीषेण</li>
                             </ul>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="https://forms.gle/oD7ccVoyHPn26SKC" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/oD7ccVoyHPn26SKC" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 7
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -367,8 +407,8 @@
                         </div>
                     </div>
 
-                    <div class="border border-blue-200 rounded-lg shadow-md">
-                        <div class="collapsible-header bg-blue-50 p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-blue-700 hover:bg-blue-100 transition duration-300" onclick="toggleCollapsible(this)">
+                    <div class="border border-jain-secondary rounded-lg shadow-md">
+                        <div class="collapsible-header bg-jain-secondary p-5 rounded-t-lg flex justify-between items-center text-xl font-semibold text-jain-primary hover:bg-green-100 transition duration-300" onclick="toggleCollapsible(this)">
                             <span>Class 8: Portions & Registration</span>
                             <span class="arrow text-2xl">+</span>
                         </div>
@@ -377,7 +417,7 @@
                                 Please write the portions for Class 8 here.
                             </div>
                             <div class="mt-6 space-y-3 pt-3 border-t">
-                                <a href="(LINK HERE)" target="_blank" class="block text-center bg-green-600 text-white py-2 rounded-lg font-semibold hover:bg-green-700">
+                                <a href="https://forms.gle/Qte5VwktckuKrgmm9" target="_blank" class="block text-center bg-jain-primary text-white py-2 rounded-lg font-semibold hover:bg-jain-highlight">
                                     REGISTER FOR CLASS 8
                                 </a>
                                 <a href="(LINK HERE)" target="_blank" class="block text-center bg-gray-500 text-white py-2 rounded-lg font-semibold hover:bg-gray-600">
@@ -391,56 +431,58 @@
                 </div>
         </section>
 
-        <section id="results" class="py-20 px-4 bg-green-50">
+        <section id="results" class="py-20 px-4 bg-jain-secondary">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold text-blue-700 mb-12 section-heading">Examination Results</h2>
+                <h2 class="text-4xl font-bold text-jain-primary mb-12 section-heading">Examination Results</h2>
                 <p class="text-lg text-gray-700 max-w-3xl mx-auto mb-10">
                     Congratulations to all our successful students! You can view the full results for the current academic year below.
                 </p>
                 
-                <div class="bg-white p-8 rounded-xl shadow-2xl border-b-4 border-blue-500">
-                    <h3 class="text-3xl font-extrabold text-blue-600 mb-4">View 2025 Annual Exam Results</h3>
+                <div class="bg-white p-8 rounded-xl shadow-2xl border-b-4 border-jain-primary">
+                    <h3 class="text-3xl font-extrabold text-jain-primary mb-4">View Exam Results</h3>
                     
-                    <a id="result-link" href="https://script.google.com/macros/s/AKfycby_DArKmHE_kauophJB3yYmupabT6HGkzMEKslVggFoO4B77ayQ4bAZ7rx6RnVP_MUl/exec" target="_blank" class="inline-block bg-blue-600 text-white py-3 px-8 rounded-lg text-xl font-semibold hover:bg-blue-700 transition duration-300">
-                        CLICK HERE TO VIEW RESULTS
+                    <a id="result-link" href="https://script.google.com/macros/s/AKfycby_DArKmHE_kauophJB3yYmupabT6HGkzMEKslVggFoO4B77ayQ4bAZ7rx6RnVP_MUl/exec" target="_blank" class="inline-block bg-jain-primary text-white py-3 px-8 rounded-lg text-xl font-semibold hover:bg-jain-highlight transition duration-300">
+                        CLICK HERE TO VIEW RESULTS FOR THE CURRENT YEAR
                     </a>
                 </div>
                 <p class="mt-4 text-sm text-gray-500">
-                    *Please remember to update the link and year above annually.
+                    
                 </p>
             </div>
         </section>
 
         <section id="contact" class="py-20 px-4 bg-white">
             <div class="max-w-7xl mx-auto">
-                <h2 class="text-4xl font-bold text-center text-blue-700 mb-12 section-heading">Contact Us</h2>
+                <h2 class="text-4xl font-bold text-center text-jain-primary mb-12 section-heading">Contact Us</h2>
                 <div class="max-w-3xl mx-auto text-center">
                     <p class="text-lg text-gray-700 mb-8">
                         For any queries regarding the course, registration, or portions, please reach out to us using the details below.
                     </p>
                     <div class="space-y-6 text-xl text-gray-700">
                         <p class="flex items-center justify-center">
-                            <span class="font-bold text-blue-600 mr-2">Email:</span> 
-                            <span class="font-semibold text-gray-700">[YOUR EMAIL ADDRESS HERE]</span>
+                            <span class="font-bold text-jain-primary mr-2">Email:rajatsurana2012@gmail.com</span> 
+                            <span class="font-semibold text-gray-700"></span>
                         </p>
                         <p class="flex items-center justify-center">
-                            <span class="font-bold text-blue-600 mr-2">Phone:</span> 
-                            <span class="font-semibold text-gray-700">[- Surendra Mehta:+91-98410-52201 <br>- Sunitha Chordia:+91-95660-82119 <br>- Manjula Mehta:+91-98416-02255]</span>
-                        </p
-                        
-           
-                          
+                            <span class="font-bold text-jain-primary mr-2">Phone:</span> 
+                            <span class="font-semibold text-gray-700 text-left">
+                                - Surendra Mehta: +91-98410-52201 <br>
+                                - Sunitha Chordia: +91-95660-82119 <br> 
+                                - Manjula Mehta: +91-98416-02255
+                            </span>
+                        </p>
                     </div>
-                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-blue-800 text-white p-8 text-center">
+    <footer class="bg-jain-primary text-white p-8 text-center">
         <div class="max-w-7xl mx-auto">
             <p class="text-sm">
-                &copy; <span id="year"></span> JAIN SANSKAR AROHAN. All rights reserved. | Proudly hosted on GitHub Pages.
+                 <span id="year"></span> <p style="font-size: 100%;"><b>JAIN SANSKAR AROHAN.<br>Inspired by: Rajagurumata Umrao Kawarji Marasa Mahasati Mandal.<br>Done By: Rajat Surana & Jiya Choradia.</b></p>
+
             </p>
         </div>
     </footer>
@@ -476,10 +518,7 @@
             }
         }
 
-        // Set the current year in the footer
-        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
-
 
